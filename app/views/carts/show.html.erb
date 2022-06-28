@@ -5,10 +5,10 @@
   </header>
 
   <% if enhanced_cart.length == 0 %>
-  <h1> Well hello there, your cart is empty!</h1>
+  <div class="alert alert-info" role="alert">
+  Well hello there, your cart is empty!
   <%= link_to "Let's get shopping!", products_url %>
-  
-
+</div>
   <% else %>
 
   <div class="panel panel-default items">
