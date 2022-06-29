@@ -5,9 +5,13 @@ class Admin::DashboardController < ApplicationController
   end
 
   def product_count
+    @products = Product.all
+    @products.count
   end
 
   def category_count
+    @categories = Category.all
+    @categories.count
   end
-  
+
 end
