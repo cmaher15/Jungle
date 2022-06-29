@@ -20,7 +20,7 @@
         </tr>
       </thead>
     <% @order.line_items.each do |item| %>
-      <%= render 'checkout'%>
+      <%= render 'checkout', product: item.product, quantity: item[:quantity].to_i %>
     <% end %>
   </div>
   <tfoot>
