@@ -6,8 +6,8 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <li>Order Email: <%= @order.email %> </li>
-    <li>Order Total:  <%= humanized_money_with_symbol @order.total_cents / 100.0 %> </li>
+    <li>A confirmation email has been sent to:  <%= @order.email %> </li>
+    <li>Order total:  <%= humanized_money_with_symbol @order.total_cents / 100.0 %> </li>
     <br>
     <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -20,7 +20,7 @@
         </tr>
       </thead>
     <% @order.line_items.each do |item| %>
-      <%= render 'checkout', product: item[:product_id], quantity: item[:quantity].to_i %>
+      <%= render 'checkout'%>
     <% end %>
   </div>
   <tfoot>
