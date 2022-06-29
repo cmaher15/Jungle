@@ -3,4 +3,11 @@ class Admin::DashboardController < ApplicationController
 
   def show
   end
+
+  def product_count
+  end
+
+  def category_count
+  end
+  
 end
