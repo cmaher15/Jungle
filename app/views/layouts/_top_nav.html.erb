@@ -37,21 +37,23 @@
           <li class="nav-item">
           <%= link_to 'About Us', about_url, class: "nav-link" %>
           </li>
-          <% if current_user %>
-            Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-            <% else %>
-              <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-            <% end %>
+
           
             <% Category.all.each do |category| %>
             <li class="nav-item">
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
+            <% if current_user %>
+            || Hello, <%= current_user.name %> || <%= link_to 'Logout', '/logout', class: "nav-link" %>
+            <% else %>
+              <%= link_to 'Login', '/login', class: "nav-link" %>  <%= link_to 'Signup', '/signup', class: "nav-link" %>
+            <% end %>
           <%# </ul>
         </li> %>
       </ul>
       <ul class="navbar-nav">
+      
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
