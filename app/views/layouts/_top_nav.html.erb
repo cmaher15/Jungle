@@ -45,7 +45,7 @@
             </li>
             <% end %>
             <% if current_user %>
-            || Hello, <%= current_user.name %> || <%= link_to 'Logout', '/logout', class: "nav-link" %>
+            <ul>|| Hello, <%= current_user.name %> ||</ul> <%= link_to 'Logout', '/logout', class: "nav-link" %>
             <% else %>
               <%= link_to 'Login', '/login', class: "nav-link" %>  <%= link_to 'Signup', '/signup', class: "nav-link" %>
             <% end %>
