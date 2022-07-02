@@ -4,21 +4,21 @@
 
 <%= form_for :user, url: '/users' do |f| %>
   <section>
-  <div class="form-group">
-  Name: <%= f.text_field :name %>
-  </div>
+  <ul><div class="form-group">
+  Name:  <%= f.text_field :name %>
+  </div></ul>
   <br>
-  <div class="form-group">
-  Email: <%= f.text_field :email %>
-  </div>
+  <ul><div class="form-group">
+  Email:  <%= f.text_field :email %>
+  </div></ul>
   <br>
-  <div class="form-group">
-  Password: <%= f.password_field :password %>
-  </div>
+  <ul><div class="form-group">
+  Password:  <%= f.password_field :password %>
+  </div></ul>
   <br>
-  <div class="form-group">
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  </div>
+ <ul> <div class="form-group">
+  Password Confirmation:  <%= f.password_field :password_confirmation %>
+  </div></ul>
   </section>
   <br>
   <%= f.submit "Submit" %>
