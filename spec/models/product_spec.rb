@@ -17,7 +17,18 @@ RSpec.describe Product, type: :model do
       cat2 = Category.create(name: 'test2Cat')
       prod2 = Product.create(name: 'monkeytree', quantity: 3, category: cat2)
       expect(prod2).to be_invalid
-      expect(prod2.errors.full_messages[3]).to eql(nil)
+      expect(prod2.errors.full_messages[0]).to eql("Price cents is not a number")
+    end
+    it "should be invalid without product quantity" do
+      cat3 = Category.create(name: 'test3Cat')
+      prod3 = Product.create(name: 'ducktree', price: 4000, category: cat3)
+      expect(prod3).to be_invalid
+      expect(prod3.errors.full_messages[0]).to eql("Quantity can't be blank")
+    end
+    it "should be invalid without a product category" do
+      prod4 = Product.create(name: 'frogtree', quantity: 14, price: 5000)
+      expect(prod4).to be_invalid
+      expect(prod4.errors.full_messages[0]).to eql("Category must exist")
     end
   end
 end
