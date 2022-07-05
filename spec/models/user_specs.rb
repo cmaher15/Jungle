@@ -38,9 +38,32 @@ RSpec.describe User, type: :model do
     end
     it "should not allow a user to register with an email already in database" do
       user8 = User.create(name: 'test8', email: 'test8@123.com', password: '123456', password_confirmation: '123456') 
-      user9 = User.create(name: 'test9', email: 'test8@123.com', password: '123456', password_confirmation: '123456')
-      expect(user9).to be_invalid
+      user9 = User.create(name: 'test9', email: 'TEST8@123.COM', password: '123456', password_confirmation: '123456')
       expect(user9.errors.full_messages[0]).to eql("Email has already been taken")
+      expect(user9).to be_invalid
+    end
+  end
+
+  describe '.authenticate_with_credentials' do
+    it "should allow a user to login with a valid email and password" do
+      user10 = User.create(name: 'test10', email: 'test10@123.com', password: '123456', password_confirmation: '123456')
+      userLogin = User.authenticate_with_credentials('test10@123.com', '123456')
+      expect(userLogin).to eq(user10)
+    end
+    it "should allow a user to login with an email regardless of case" do
+      user11 = User.create(name: 'test11', email: 'test11@123.com', password: '123456', password_confirmation: '123456')
+      userLogin = User.authenticate_with_credentials('TEST11@123.COM', '123456')
+      expect(userLogin).to eq(user11)
+    end
+    it "should allow a user to login with an email regardless of leading/trailing spaces" do
+        user12 = User.create(name: 'test12', email: 'test12@123.com', password: '123456', password_confirmation: '123456')
+        userLogin = User.authenticate_with_credentials('      test12@123.com ', '123456')
+        expect(userLogin).to eq(user12)
+    end
+    it "should be invalid if user enters incorrect password" do
+        user13 = User.create(name: 'test13', email: 'test13@123.com', password: '123456', password_confirmation: '123456')
+        userLogin = User.authenticate_with_credentials('test13@123.com', 'applesauce')
+        expect(userLogin).to_not eq(user13)
     end
   end
 end
