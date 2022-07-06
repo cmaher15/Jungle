@@ -11,6 +11,18 @@ A mini e-commerce application built with Rails 6.1 for purposes of teaching Rail
 - an admin has the ability to add new categories
 - if an item's quantity is 0, the item will display a "sold out" badge and users will not be able to click the "add to cart" button
 
+## Screenshots
+!["Login Page"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.38.40%20PM.png?raw=true)
+!["Empty Cart Message"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.39.44%20PM.png?raw=true)
+!["Signup Page"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.43.40%20PM.png?raw=true)
+!["Navbar for Logged in User"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.44.07%20PM.png?raw=true)
+!["Admin Dashboard"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.44.16%20PM.png?raw=true)
+!["Sold Out Badge"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.45.03%20PM.png)
+(https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.45.14%20PM.png?raw=true)
+!["Order Confirmation Page"](https://github.com/cmaher15/Jungle/blob/master/docs/Screen%20Shot%202022-07-06%20at%201.47.16%20PM.png?raw=true)
+
+
+
 
 ## Setup
 
