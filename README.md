@@ -1,6 +1,16 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. The application has basic features which include:
+- an "About Us" page, providing a sumamry of the app
+- allowing a user to register for an account and login. If an e-mail is already in use, the user will not be able to register. If a user enters incorrect login credentials, they will be unable to login and must try again
+- once a user is logged in, their name will be displayed in the nav bar with a "logout" link
+- allowing a user to browse products and add these items to their cart
+- if the user's cart is empty, a notification will be displayed on the cart page which includes a link to the product page
+- once a user places an order, they are shown an order summary page including their order number, name and e-mail associated with the order, and the order total
+- an admin has the ability to add, edit, and delete products
+- an admin has the ability to add new categories
+- if an item's quantity is 0, the item will display a "sold out" badge and users will not be able to click the "add to cart" button
+
 
 ## Setup
 
